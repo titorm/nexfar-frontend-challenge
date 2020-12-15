@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Image } from "react-native";
-import { RectButton } from "react-native-gesture-handler";
+import { TouchableOpacity } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 
 import { Feather, MaterialCommunityIcons } from "@expo/vector-icons";
@@ -21,7 +21,7 @@ function Headercomponent() {
       <Image source={logoImg} style={styles.image} />
 
       <View style={styles.buttonsContainer}>
-        <RectButton
+        <TouchableOpacity
           style={styles.infoButton}
           onPress={handleNavigateToCartPage}
         >
@@ -31,16 +31,16 @@ function Headercomponent() {
             color="#ebebff"
             style={styles.buttonIcon}
           ></MaterialCommunityIcons>
-        </RectButton>
+        </TouchableOpacity>
 
-        <RectButton style={styles.infoButton}>
+        <TouchableOpacity style={styles.infoButton}>
           <Feather
             name="info"
             size={24}
             color="#ebebff"
             style={styles.buttonIcon}
           ></Feather>
-        </RectButton>
+        </TouchableOpacity>
       </View>
     </View>
   );
