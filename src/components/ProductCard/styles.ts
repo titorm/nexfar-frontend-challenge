@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
         marginLeft: 10,
         width: 120,
         height: 220,
-        resizeMode: 'contain',
+        resizeMode: 'cover',
     },
 
     itemDescriptionContainer: {
@@ -69,6 +69,14 @@ const styles = StyleSheet.create({
         fontFamily: "TitilliumWeb_400Regular",
         color: '#301b2c',
         fontSize: 22,
+    },
+
+    unavailable: {
+        fontFamily: "TitilliumWeb_400Regular",
+        color: '#5b127d',
+        fontSize: 20,
+        marginTop: 10,
+        marginLeft: 100,
     },
 });
 

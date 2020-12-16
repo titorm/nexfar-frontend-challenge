@@ -6,6 +6,15 @@ import { Ionicons } from "@expo/vector-icons";
 
 import styles from "./styles";
 
+export interface Price {
+  price: number;
+  finalPrice: number;
+  taxes: number;
+  discount: number;
+  industryPrice: number;
+  pmcPrice: number;
+}
+
 export interface Product {
   id: string;
   sku: string;
@@ -15,14 +24,7 @@ export interface Product {
   category: string;
   principle: string;
   base: string;
-  price: {
-    price: number;
-    finalPrice: number;
-    taxes: number;
-    discount: number;
-    industryPrice: number;
-    pmcPrice: number;
-  };
+  price: Price;
   quantityAvailable: number;
   validUntil: number;
   imageURL: string;
@@ -44,35 +46,47 @@ const ProductCardComponent: React.FunctionComponent<Product> = (product) => {
         <View style={styles.itemDescriptionContainer}>
           <Text style={styles.itemName}>{product.name}</Text>
           <Text style={styles.itemMaker}>{product.maker}</Text>
-          <Text style={styles.itemPrice}>R$ 16.92</Text>
+          <Text style={styles.itemPrice}>
+            R$ {product && product.price && product.price.finalPrice}
+          </Text>
         </View>
       </View>
 
-      <View style={styles.buttonsContainer}>
-        <TouchableOpacity
-          onPress={() => {
-            if (productQuantity > 0) {
-              setProductQuantity(productQuantity - 1);
-            }
-          }}
-          style={styles.button}
-        >
-          <Ionicons name="md-remove-circle-outline" size={50} color="#5b127d" />
-        </TouchableOpacity>
+      {product.quantityAvailable > 0 && (
+        <View style={styles.buttonsContainer}>
+          <TouchableOpacity
+            onPress={() => {
+              if (productQuantity > 0) {
+                setProductQuantity(productQuantity - 1);
+              }
+            }}
+            style={styles.button}
+          >
+            <Ionicons
+              name="md-remove-circle-outline"
+              size={50}
+              color="#5b127d"
+            />
+          </TouchableOpacity>
 
-        <Text style={styles.productQuantity}>{productQuantity}</Text>
+          <Text style={styles.productQuantity}>{productQuantity}</Text>
 
-        <TouchableOpacity
-          onPress={() => {
-            if (productQuantity < product.quantityAvailable) {
-              setProductQuantity(productQuantity + 1);
-            }
-          }}
-          style={styles.button}
-        >
-          <Ionicons name="md-add-circle-outline" size={50} color="#5b127d" />
-        </TouchableOpacity>
-      </View>
+          <TouchableOpacity
+            onPress={() => {
+              if (productQuantity < product.quantityAvailable) {
+                setProductQuantity(productQuantity + 1);
+              }
+            }}
+            style={styles.button}
+          >
+            <Ionicons name="md-add-circle-outline" size={50} color="#5b127d" />
+          </TouchableOpacity>
+        </View>
+      )}
+
+      {product.quantityAvailable === 0 && (
+        <Text style={styles.unavailable}>Produto indisponível</Text>
+      )}
     </View>
   );
 };
