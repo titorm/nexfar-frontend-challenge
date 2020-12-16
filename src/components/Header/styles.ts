@@ -9,11 +9,18 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between'
   },
 
+  backButton: {
+    marginLeft: 10,
+    marginTop: 50,
+    height: 40,
+    width: 40,
+  },
+
   image: {
     width: 80,
     height: 80,
     marginTop: '5%',
-    marginLeft: '5%',
+    marginLeft: '20%',
     resizeMode: 'contain',
   },
 

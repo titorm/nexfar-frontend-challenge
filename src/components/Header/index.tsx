@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Image } from "react-native";
+import { View, Image, Text } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 
@@ -10,14 +10,27 @@ import logoImg from "../../assets/images/logo2.png";
 import styles from "./styles";
 
 function Headercomponent() {
-  const { navigate } = useNavigation();
+  const { navigate, goBack } = useNavigation();
 
   function handleNavigateToCartPage() {
     navigate("CartPage");
   }
 
+  function handleGoBack() {
+    goBack();
+  }
+
   return (
     <View style={styles.container}>
+      <TouchableOpacity>
+        <Feather
+          name="arrow-left"
+          size={24}
+          color="#ebebff"
+          style={styles.backButton}
+          onPress={handleGoBack}
+        />
+      </TouchableOpacity>
       <Image source={logoImg} style={styles.image} />
 
       <View style={styles.buttonsContainer}>
