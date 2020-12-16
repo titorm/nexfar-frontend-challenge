@@ -1,84 +1,84 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-    container: {
-        width: 380,
-        height: 300,
-        marginTop: 5,
-        marginLeft: -10,
-        borderRadius: 5,
-        borderWidth: 1,
-        backgroundColor: '#ebebff',
-        borderColor: '#c4c4c4',
-    },
+  container: {
+    width: 380,
+    height: 300,
+    marginTop: 5,
+    marginLeft: -10,
+    borderRadius: 5,
+    borderWidth: 1,
+    backgroundColor: "#ebebff",
+    borderColor: "#c4c4c4",
+  },
 
-    itemContainer: {
-        flexDirection: 'row',
-        justifyContent: 'space-between'
-    },
+  itemContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
 
-    image: {
-        marginTop: 10,
-        marginLeft: 10,
-        width: 100,
-        height: 200,
-        resizeMode: 'cover',
-    },
+  image: {
+    marginTop: 10,
+    marginLeft: 10,
+    width: 100,
+    height: 200,
+    resizeMode: "cover",
+  },
 
-    itemDescriptionContainer: {
-        marginLeft: 20,
-        marginTop: 50,
-        marginRight: 30,
-        maxHeight: 30,
-        maxWidth: 200,
-    },
+  itemDescriptionContainer: {
+    marginLeft: 20,
+    marginTop: 50,
+    marginRight: 30,
+    maxHeight: 30,
+    maxWidth: 200,
+  },
 
-    itemName: {
-        fontFamily: "TitilliumWeb_400Regular",
-        fontSize: 16,
-        marginBottom: 10,
-        color: "#5b127d",
-    },
+  itemName: {
+    fontFamily: "TitilliumWeb_400Regular",
+    fontSize: 16,
+    marginBottom: 10,
+    color: "#5b127d",
+  },
 
-    itemMaker: {
-        fontFamily: "TitilliumWeb_400Regular",
-        fontSize: 14,
-        marginBottom: 10,
-        color: "#000",
-    },
+  itemMaker: {
+    fontFamily: "TitilliumWeb_400Regular",
+    fontSize: 14,
+    marginBottom: 10,
+    color: "#000",
+  },
 
-    itemPrice: {
-        fontFamily: "TitilliumWeb_700Bold",
-        fontSize: 20,
-        color: "#ffad5c",
-    },
+  itemPrice: {
+    fontFamily: "TitilliumWeb_700Bold",
+    fontSize: 20,
+    color: "#ffad5c",
+  },
 
-    buttonsContainer: {
-        flexDirection: 'row',
-        paddingTop: 20,
-        paddingLeft: 20,
-    },
+  buttonsContainer: {
+    flexDirection: "row",
+    paddingTop: 20,
+    paddingLeft: 20,
+  },
 
-    button: {
-        marginLeft: 10,
-        borderRadius: 100,
-    },
+  button: {
+    marginLeft: 10,
+    borderRadius: 100,
+  },
 
-    productQuantity: {
-        marginTop: 10,
-        marginLeft: 10,
-        fontFamily: "TitilliumWeb_400Regular",
-        color: '#301b2c',
-        fontSize: 22,
-    },
+  productQuantity: {
+    marginTop: 10,
+    marginLeft: 10,
+    fontFamily: "TitilliumWeb_400Regular",
+    color: "#301b2c",
+    fontSize: 22,
+  },
 
-    unavailable: {
-        fontFamily: "TitilliumWeb_400Regular",
-        color: '#5b127d',
-        fontSize: 20,
-        marginTop: 10,
-        marginLeft: 100,
-    },
+  unavailable: {
+    fontFamily: "TitilliumWeb_400Regular",
+    color: "#5b127d",
+    fontSize: 20,
+    marginTop: 10,
+    marginLeft: 100,
+  },
 });
 
 export default styles;
