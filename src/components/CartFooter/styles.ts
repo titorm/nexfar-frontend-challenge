@@ -1,17 +1,15 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
-  height: '12%',
-  width: '100%',
-  backgroundColor: '#3cba92',
-  flexDirection: 'row',
-  justifyContent: 'space-between'
+    height: "12%",
+    width: "100%",
+    backgroundColor: "#3cba92",
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
 
-  descriptionContainer: {
-    
-  },
+  descriptionContainer: {},
 
   descriptionText: {
     marginTop: 10,
