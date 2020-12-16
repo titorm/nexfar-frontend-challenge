@@ -20,8 +20,8 @@ const styles = StyleSheet.create({
     image: {
         marginTop: 10,
         marginLeft: 10,
-        width: 120,
-        height: 220,
+        width: 100,
+        height: 200,
         resizeMode: 'cover',
     },
 
@@ -55,6 +55,7 @@ const styles = StyleSheet.create({
 
     buttonsContainer: {
         flexDirection: 'row',
+        paddingTop: 20,
         paddingLeft: 20,
     },
 

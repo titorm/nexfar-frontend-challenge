@@ -15,7 +15,6 @@ function ProductsPage() {
       <Headercomponent />
 
       <ScrollView
-        style={styles.productsList}
         contentContainerStyle={{
           paddingHorizontal: 16,
           paddingBottom: 16,

@@ -3,6 +3,7 @@ import { View, Text, Image } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 
 import Headercomponent from "../../components/Header";
+import CartFooterComponent from "../../components/CartFooter";
 
 import styles from "./styles";
 
@@ -11,7 +12,16 @@ function CartPage() {
     <View style={styles.container}>
       <Headercomponent />
 
-      <Text>CART PAGE</Text>
+      <ScrollView
+        contentContainerStyle={{
+          paddingHorizontal: 16,
+          paddingBottom: 16,
+        }}
+      >
+        <Text>CART PAGE</Text>
+      </ScrollView>
+
+      <CartFooterComponent />
     </View>
   );
 }

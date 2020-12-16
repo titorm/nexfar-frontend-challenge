@@ -5,10 +5,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
   },
-
-  productsList: {
-    
-  },
 })
 
 export default styles;

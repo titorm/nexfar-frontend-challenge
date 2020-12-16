@@ -31,6 +31,7 @@ function Headercomponent() {
           onPress={handleGoBack}
         />
       </TouchableOpacity>
+
       <Image source={logoImg} style={styles.image} />
 
       <View style={styles.buttonsContainer}>
