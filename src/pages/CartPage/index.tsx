@@ -68,8 +68,13 @@ function CartPage() {
         {cartItems.map((item) => (
           <CartItemComponent key={item.id} item={item} refreshCart={loadData} />
         ))}
-      </ScrollView>
 
+        {cartItems.length === 0 && (
+          <Text style={styles.emptyCartText}>
+            Você ainda não possui itens no carrinho!
+          </Text>
+        )}
+      </ScrollView>
       <CartFooterComponent total={total} taxes={taxes} />
     </View>
   );

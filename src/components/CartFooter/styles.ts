@@ -21,11 +21,11 @@ const styles = StyleSheet.create({
 
   buyButton: {
     height: 50,
-    width: 80,
+    width: 100,
     borderRadius: 50,
     marginTop: 20,
     marginRight: 20,
-    backgroundColor: "#ebebff",
+    backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
   },

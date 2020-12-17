@@ -4,12 +4,22 @@ const styles = StyleSheet.create({
   container: {
     width: 380,
     height: 300,
-    marginTop: 5,
+    marginTop: 10,
     marginLeft: -10,
-    borderRadius: 5,
+    marginBottom: 5,
+    borderRadius: 15,
     borderWidth: 1,
     backgroundColor: "#ffffff",
     borderColor: "#c4c4c4",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 5,
+    },
+    shadowOpacity: 0.34,
+    shadowRadius: 6.27,
+
+    elevation: 10,
   },
 
   itemContainer: {

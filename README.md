@@ -11,8 +11,26 @@ The application aims to:
    - Remove products from shopping cart;
 2. List products added to shopping cart page;
    - Remove products from shopping cart page;
-   - Clear items from cart page;
 3. Sum the product total cost on cart page footer;
+
+## Bugs found:
+
+I am aware that currently the application has two bugs, they appear to be only visual problems and will be corrected as soon as possible.
+
+The bugs found are:
+
+1. Description of one of the products (product name: "vit e gel c/30 pcs") is displayed out of position (right compared to other products).
+2. When adding items to the cart, accessing the cart and removing the items there, when the user returns to the products page, the quantity of items added previously remains (visually), but the cart count as empty.
+
+## Future Improvements:
+
+1. Add shimmer effect while product cards load.
+2. Disable the decrease quantity button on the product card when the quantity is zero.
+3. Add new features, such as:
+   - Login page;
+   - Information page;
+   - User page;
+   - Checkout page;
 
 ## Prerequisites:
 
