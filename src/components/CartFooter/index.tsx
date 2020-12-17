@@ -4,11 +4,13 @@ import { RectButton } from "react-native-gesture-handler";
 
 import styles from "./styles";
 
-function CartFooterComponent() {
+function CartFooterComponent(props) {
+  const { total } = props;
+
   return (
     <View style={styles.container}>
       <View style={styles.descriptionContainer}>
-        <Text style={styles.descriptionText}>Total: R$ 380.0</Text>
+        <Text style={styles.descriptionText}>Total: R$ {total.toFixed(2)}</Text>
         <Text style={styles.descriptionText}>Impostos: R$ 60.0</Text>
       </View>
 

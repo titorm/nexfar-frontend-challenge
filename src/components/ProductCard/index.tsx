@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Image, Text, View } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
@@ -31,17 +31,19 @@ export interface Product {
 const ProductCardComponent: React.FunctionComponent<Product> = (product) => {
   const [productQuantity, setProductQuantity] = useState(0);
 
+  useEffect(() => {
+    updateCartItem();
+  }, [productQuantity]);
+
   const handleQuantityDecrement = () => {
     if (productQuantity > 0) {
       setProductQuantity(productQuantity - 1);
-      updateCartItem();
     }
   };
 
   const handleQuantityIncrement = () => {
     if (productQuantity < product.quantity_available) {
       setProductQuantity(productQuantity + 1);
-      updateCartItem();
     }
   };
 
