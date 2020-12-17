@@ -1,14 +1,31 @@
-import React from "react";
-import { View, Text } from "react-native";
+import React, { useEffect, useState } from "react";
+import { View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 
+import ProductService from "../../services/product";
 import Headercomponent from "../../components/Header";
 import ProductCardComponent, { Product } from "../../components/ProductCard";
 
 import styles from "./styles";
 
 function ProductsPage() {
-  const products = require("../../data/products.json");
+  const [mounted, setMounted] = useState(false);
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    function loadProducts() {
+      setMounted(true);
+
+      ProductService.getAll().then((response: any) => {
+        setProducts(response._array);
+      }),
+        (error: any) => console.log(error);
+    }
+
+    if (!mounted) {
+      loadProducts();
+    }
+  }, [mounted, products]);
 
   return (
     <View style={styles.container}>

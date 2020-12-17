@@ -6,15 +6,6 @@ import { Ionicons } from "@expo/vector-icons";
 
 import styles from "./styles";
 
-export interface Price {
-  price: number;
-  finalPrice: number;
-  taxes: number;
-  discount: number;
-  industryPrice: number;
-  pmcPrice: number;
-}
-
 export interface Product {
   id: string;
   sku: string;
@@ -24,10 +15,15 @@ export interface Product {
   category: string;
   principle: string;
   base: string;
-  price: Price;
-  quantityAvailable: number;
+  price: number;
+  price_final: number;
+  price_taxes: number;
+  price_discount: number;
+  price_industry: number;
+  price_pmc: number;
+  quantity_available: number;
   validUntil: number;
-  imageURL: string;
+  image_url: string;
 }
 
 const ProductCardComponent: React.FunctionComponent<Product> = (product) => {
@@ -38,7 +34,7 @@ const ProductCardComponent: React.FunctionComponent<Product> = (product) => {
       <View style={styles.itemContainer}>
         <Image
           source={{
-            uri: product.imageURL,
+            uri: product.image_url,
           }}
           style={styles.image}
         ></Image>
@@ -46,13 +42,11 @@ const ProductCardComponent: React.FunctionComponent<Product> = (product) => {
         <View style={styles.itemDescriptionContainer}>
           <Text style={styles.itemName}>{product.name}</Text>
           <Text style={styles.itemMaker}>{product.maker}</Text>
-          <Text style={styles.itemPrice}>
-            R$ {product && product.price && product.price.finalPrice}
-          </Text>
+          <Text style={styles.itemPrice}>R$ {product.price_final}</Text>
         </View>
       </View>
 
-      {product.quantityAvailable > 0 && (
+      {product.quantity_available > 0 && (
         <View style={styles.buttonsContainer}>
           <TouchableOpacity
             onPress={() => {
@@ -73,7 +67,7 @@ const ProductCardComponent: React.FunctionComponent<Product> = (product) => {
 
           <TouchableOpacity
             onPress={() => {
-              if (productQuantity < product.quantityAvailable) {
+              if (productQuantity < product.quantity_available) {
                 setProductQuantity(productQuantity + 1);
               }
             }}
@@ -84,7 +78,7 @@ const ProductCardComponent: React.FunctionComponent<Product> = (product) => {
         </View>
       )}
 
-      {product.quantityAvailable === 0 && (
+      {product.quantity_available === 0 && (
         <Text style={styles.unavailable}>Produto indisponível</Text>
       )}
     </View>
