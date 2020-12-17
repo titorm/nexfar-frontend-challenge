@@ -31,6 +31,7 @@ The bugs found are:
    - Information page;
    - User page;
    - Checkout page;
+4. Add app personalized Icon and Name;
 
 ## Prerequisites:
 
@@ -47,6 +48,21 @@ git clone git@github.com:wcamposs/nexfar-frontend-challenge.git
 **Installation and configuration:**
 
 Install and configure the environment to run the application, following [this tutorial](https://medium.com/@jeancabral/instalando-e-configurando-react-native-no-ubuntu-18-04-e3329ac090a0).
+
+**Installing ADB and Fastboot:**
+
+You will also need to install adb and fastboot, so through the terminal, install them using the following commands:
+
+```
+sudo apt-get update
+sudo apt install android-tools-adb android-tools-fastboot
+```
+
+To check the adb version, run:
+
+```
+adb version
+```
 
 **Expo Installation:**
 
@@ -152,6 +168,14 @@ i
 **Android:**
 
 - Install the Expo app on the device through the app store. After installation, run the application, select the option **scan with QRCode** and scan the QRCode displayed in the terminal using the device's camera.
+
+## Running App Build:
+
+The repository contains an android build of the application, it is located in the **builds** directory, to install it, go to the build directory and run the following command:
+
+```
+adb install nexfar-technical-challenge-signed.apk
+```
 
 ## Built With:
 
