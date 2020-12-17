@@ -24,7 +24,7 @@ The bugs found are:
 
 ## Project Decisions:
 
-In the product entitled "SHAMPOO HIDRA THERAPY 300ML-PH ACTION COSMETICS", an inconsistency in the price field was identified (instead of ** price ** is **prices**). Therefore, the decision was made not to display the inconsistent product, as it differs from the others (in this case, it is via JSON return, however, the decision was made considering that the data came from an API).
+In the product entitled "SHAMPOO HIDRA THERAPY 300ML-PH ACTION COSMETICS", an inconsistency in the price field was identified (instead of **price** is **prices**). Therefore, the decision was made not to display the inconsistent product, as it differs from the others (in this case, it is via JSON return, however, the decision was made considering that the data came from an API).
 
 In this case, the ideal solution is to communicate to the backend team to correct the particular product so that after corrected, it will be displayed in the app again.
 
