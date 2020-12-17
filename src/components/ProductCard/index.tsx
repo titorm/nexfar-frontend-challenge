@@ -57,7 +57,7 @@ const ProductCardComponent: React.FunctionComponent<Product> = (product) => {
       return;
     }
 
-    CartService.findByProductId(product.id).then((response) => {
+    CartService.findByProductId(product.id).then((response: any) => {
       if (response.length === 0) {
         CartService.create(item);
         return;

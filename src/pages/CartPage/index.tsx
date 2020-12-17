@@ -25,15 +25,14 @@ function CartPage() {
       .then(([responseProducts, responseCartItems]) => {
         const products = {};
 
-        responseProducts._array.map((product) => {
+        responseProducts._array.map((product: any) => {
           products[product.id] = product;
-          console.log(product);
         });
         let tmpTotal = 0;
         let tmpTaxes = 0;
 
         setCartItems(
-          responseCartItems._array.map((cartItem) => {
+          responseCartItems._array.map((cartItem: any) => {
             cartItem.product = products[cartItem.product_id];
             tmpTotal += cartItem.product.price_final * cartItem.quantity;
             tmpTaxes += cartItem.product.price_taxes * cartItem.quantity;

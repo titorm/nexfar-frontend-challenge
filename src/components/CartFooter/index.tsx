@@ -4,7 +4,7 @@ import { RectButton } from "react-native-gesture-handler";
 
 import styles from "./styles";
 
-function CartFooterComponent(props) {
+function CartFooterComponent(props: any) {
   const { total, taxes } = props;
 
   return (
