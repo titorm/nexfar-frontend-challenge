@@ -13,12 +13,16 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
 
+  itemNameContainer: {
+    maxWidth: "50%",
+  },
+
   itemName: {
     fontFamily: "TitilliumWeb_400Regular",
     fontSize: 14,
     marginBottom: 10,
     color: "#5b127d",
-    marginRight: 20,
+    marginRight: 10,
   },
 
   itemPriceContainer: {
@@ -40,6 +44,13 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     color: "#5b127d",
     marginRight: 10,
+  },
+
+  itemTaxes: {
+    fontFamily: "TitilliumWeb_400Regular",
+    fontSize: 12,
+    marginBottom: 10,
+    color: "#5b127d",
   },
 
   removeItemButton: {},
