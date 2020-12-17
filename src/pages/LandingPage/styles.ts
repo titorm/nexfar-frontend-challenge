@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     marginTop: 120,
     width: 200,
     height: 200,
-    resizeMode: 'contain',
+    resizeMode: "contain",
   },
 
   subtitle: {
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     height: 70,
     width: "95%",
     backgroundColor: "#3cba92",
-    borderRadius: 8,
+    borderRadius: 50,
     padding: 24,
     alignItems: "center",
     justifyContent: "center",
@@ -46,6 +46,6 @@ const styles = StyleSheet.create({
     color: "#ebebff",
     fontSize: 20,
   },
-})
+});
 
 export default styles;

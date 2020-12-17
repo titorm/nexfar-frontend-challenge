@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   buyButton: {
     height: 50,
     width: 80,
-    borderRadius: 10,
+    borderRadius: 50,
     marginTop: 20,
     marginRight: 20,
     backgroundColor: "#ebebff",
