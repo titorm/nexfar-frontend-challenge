@@ -3,6 +3,8 @@ import { Image, Text, View } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 import { Ionicons } from "@expo/vector-icons";
+import CartService from "../../services/cart";
+import { CartModel } from "../../models/cart";
 
 import styles from "./styles";
 
@@ -29,6 +31,40 @@ export interface Product {
 const ProductCardComponent: React.FunctionComponent<Product> = (product) => {
   const [productQuantity, setProductQuantity] = useState(0);
 
+  const handleQuantityDecrement = () => {
+    if (productQuantity > 0) {
+      setProductQuantity(productQuantity - 1);
+      updateCartItem();
+    }
+  };
+
+  const handleQuantityIncrement = () => {
+    if (productQuantity < product.quantity_available) {
+      setProductQuantity(productQuantity + 1);
+      updateCartItem();
+    }
+  };
+
+  const updateCartItem = () => {
+    const item: CartModel = new CartModel();
+    item.quantity = productQuantity;
+    item.product_id = product.id;
+
+    if (productQuantity === 0) {
+      CartService.deleteByProductId(product.id);
+      return;
+    }
+
+    CartService.findByProductId(product.id).then((response) => {
+      if (response.length === 0) {
+        CartService.create(item);
+        return;
+      }
+
+      CartService.updateByProductId(item);
+    });
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.itemContainer}>
@@ -49,11 +85,7 @@ const ProductCardComponent: React.FunctionComponent<Product> = (product) => {
       {product.quantity_available > 0 && (
         <View style={styles.buttonsContainer}>
           <TouchableOpacity
-            onPress={() => {
-              if (productQuantity > 0) {
-                setProductQuantity(productQuantity - 1);
-              }
-            }}
+            onPress={handleQuantityDecrement}
             style={styles.button}
           >
             <Ionicons
@@ -66,11 +98,7 @@ const ProductCardComponent: React.FunctionComponent<Product> = (product) => {
           <Text style={styles.productQuantity}>{productQuantity}</Text>
 
           <TouchableOpacity
-            onPress={() => {
-              if (productQuantity < product.quantity_available) {
-                setProductQuantity(productQuantity + 1);
-              }
-            }}
+            onPress={handleQuantityIncrement}
             style={styles.button}
           >
             <Ionicons name="md-add-circle-outline" size={50} color="#5b127d" />
