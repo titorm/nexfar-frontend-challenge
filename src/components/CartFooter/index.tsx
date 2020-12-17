@@ -5,13 +5,15 @@ import { RectButton } from "react-native-gesture-handler";
 import styles from "./styles";
 
 function CartFooterComponent(props) {
-  const { total } = props;
+  const { total, taxes } = props;
 
   return (
     <View style={styles.container}>
       <View style={styles.descriptionContainer}>
         <Text style={styles.descriptionText}>Total: R$ {total.toFixed(2)}</Text>
-        <Text style={styles.descriptionText}>Impostos: R$ 60.0</Text>
+        <Text style={styles.descriptionText}>
+          Impostos: R$ {taxes.toFixed(2)}
+        </Text>
       </View>
 
       <RectButton style={styles.buyButton}>

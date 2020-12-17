@@ -26,7 +26,10 @@ const CartItemComponent = (props: any) => {
             <Text style={styles.itemValue}>
               Total: R$ {(item.product.price_final * item.quantity).toFixed(2)}
             </Text>
-            <Text style={styles.itemTaxes}>Impostos: R$ 60.00</Text>
+            <Text style={styles.itemTaxes}>
+              Impostos: R${" "}
+              {(item.product.price_taxes * item.quantity).toFixed(2)}
+            </Text>
           </View>
 
           <TouchableOpacity

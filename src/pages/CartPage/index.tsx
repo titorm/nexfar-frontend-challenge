@@ -14,6 +14,7 @@ function CartPage() {
   const [mounted, setMounted] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const [total, setTotal] = useState(0);
+  const [taxes, setTaxes] = useState(0);
 
   const loadData = () => {
     setMounted(true);
@@ -26,18 +27,22 @@ function CartPage() {
 
         responseProducts._array.map((product) => {
           products[product.id] = product;
+          console.log(product);
         });
         let tmpTotal = 0;
+        let tmpTaxes = 0;
 
         setCartItems(
           responseCartItems._array.map((cartItem) => {
             cartItem.product = products[cartItem.product_id];
             tmpTotal += cartItem.product.price_final * cartItem.quantity;
+            tmpTaxes += cartItem.product.price_taxes * cartItem.quantity;
             return cartItem;
           })
         );
 
         setTotal(tmpTotal);
+        setTaxes(tmpTaxes);
       })
       .catch((error) => console.log(error));
   };
@@ -65,7 +70,7 @@ function CartPage() {
         ))}
       </ScrollView>
 
-      <CartFooterComponent total={total} />
+      <CartFooterComponent total={total} taxes={taxes} />
     </View>
   );
 }
